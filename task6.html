@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Слайдер</title>
+        <link rel="stylesheet" href="task6.css" />
+        <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    </head>
+    <body>
+        <header>
+            <h1>Слайдер</h1>
+        </header>
+
+        <div class="slider-container">
+            <button class="slider-button prev" id="prev">🢠</button>
+            <div class="slider-wrapper">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Клоны добавятся через JS -->
+                    <!-- <img src="biruza.jpg" alt="Бирюза" class="slide" />
+                    <img src="curver.jpg" alt="Изогнутый" class="slide" />
+                    <img src="silk.jpg" alt="Шёлк" class="slide" /> -->
+                    <img src="c0.gif" alt="c0" class="slide" />
+                    <img src="q0.gif" alt="q0" class="slide" />
+                    <img src="s0.gif" alt="s0" class="slide" />
+                </div>
+            </div>
+            <button class="slider-button next" id="next">🢣</button>
+            <div class="slider-dots" id="dotsContainer"></div>
+        </div>
+        <script src="slider.js"></script>
+    </body>
+</html>

@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000000;
+}
+
+header {
+    position: fixed;
+    width: 100vw;
+    height: 20vh;
+    top: 0;
+    left: 0;
+    text-align: center;
+    border: solid #00ffff 1vmin;
+    border-radius: 2vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 #00ffff, inset 0.5vmin 0.5vmin 1vmin #00ffff,
+        inset -0.5vmin -0.5vmin 1vmin #00ffff;
+}
+
+h1 {
+    color: #00ff77;
+    font-size: 10vh;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.slider-container {
+    position: relative;
+    width: 20vw;
+    min-width: 200px;
+    overflow: hidden;
+    border-radius: 3vmin;
+    box-shadow: inset 0 0 0 #00ffff, inset 0.5vmin 0.5vmin 1vmin #00ffff,
+        inset -0.5vmin -0.5vmin 1vmin #00ffff;
+    background-color: #554b4b00;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 50%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Для мгновенных перескоков */
+.slider-track.no-transition {
+    transition: none;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3vmin;
+    height: 3vmin;
+    background-color: #00000000;
+    color: #ff00ff;
+    border: none;
+    font-size: 3vmin;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.slider-button:hover {
+    opacity: 1;
+    color: #00ffff;
+}
+
+.slider-button:active {
+    color: #ff3300;
+    margin-top: 0.5vmin;
+}
+
+.prev {
+    left: 1vmin;
+}
+
+.next {
+    right: 1vmin;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 4vmin;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1vmin;
+    z-index: 10;
+}
+
+.dot {
+    width: 1vmin;
+    height: 1vmin;
+    background-color: #00ff77;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #ff3300;
+    width: 1.4vmin;
+    height: 1.4vmin;
+    border: solid 0.2vmin #00ff77;
+}
+
+.dot:hover {
+    background-color: #ffff00;
+}
+
+@media (max-width: 500px) {
+    .slider-container {
+        position: relative;
+        width: 80vw;
+        min-width: 100px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .slider-button {
+        width: 12vmin;
+        height: 12vmin;
+        font-size: 12vmin;
+    }
+
+    .slider-button:active {
+        margin-top: 2vmin;
+    }
+
+    .dot {
+        width: 4vmin;
+        height: 4vmin;
+        gap: 4vmin;
+        margin: 1vmin;
+    }
+
+    .dot.active {
+        width: 5.6vmin;
+        height: 5.6vmin;
+    }
+}
